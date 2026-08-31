@@ -1,7 +1,5 @@
 <div align="center">
-# AR Prioritization & Underpayment Recovery Engine
 
-Public-data Medicare recovery engine for expected payment benchmarking, underpayment variance detection, and AR queue prioritization.
 <img src="assets/workflow-diagram.png" alt="AR Prioritization and Underpayment Recovery Engine workflow" width="920" />
 
 </div>
