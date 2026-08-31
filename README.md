@@ -1,19 +1,8 @@
 <div align="center">
-
-<img src="assets/workflow-diagram.png" alt="AR Prioritization and Underpayment Recovery Engine workflow" width="920" />
-
 # AR Prioritization & Underpayment Recovery Engine
 
 Public-data Medicare recovery engine for expected payment benchmarking, underpayment variance detection, and AR queue prioritization.
-
-<p>
-  <a href="https://github.com/ayeshazahid170125/AR-prioritization-underpayment-recovery-engine">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github" alt="GitHub Repository" />
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white" alt="Python 3.11 and 3.12" />
-  <img src="https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=black" alt="React Frontend" />
-  <img src="https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
-</p>
+<img src="assets/workflow-diagram.png" alt="AR Prioritization and Underpayment Recovery Engine workflow" width="920" />
 
 </div>
 
