@@ -116,24 +116,6 @@ Large raw CMS/RVU files, model binaries, and generated multi-million-row CSVs ar
 
 ---
 
-## Pipeline
-
-1. **Data profiling & normalization** (`step_01_eda.py`, `step01b_reload_headers.py`) — profiles and normalizes source files
-2. **Expected payment estimation** (`step02_expected_payment.py`) — builds expected-payment tables from RVU references
-3. **Join actual with expected** (`step03_join_actual_expected.py`) — joins actual CMS payment with expected payment
-4. **Data audit & cleaning** (`step04a`–`step04d`) — audits nulls, outliers, cleaning, and benchmark applicability
-5. **Exploratory analysis** (`step05_premodel_eda.py`) — explores underpayment patterns
-6. **Feature engineering** (`step06_feature_engineering.py`) — creates model-ready recovery features
-7. **Target definition** (`step07_target_definition.py`) — defines the high-recovery-priority proxy target
-8. **Model training** (`step08_collection_model.py`) — trains the recovery-priority model
-9. **AR priority workqueue** (`step09_ar_priority_queue.py`) — scores and ranks the AR workqueue
-10. **Anomaly detection** (`step10_isolation_forest_anomalies.py`) — finds underpayment anomaly patterns
-11. **Reporting** (`step11_underpayment_report.py`) — creates executive recovery summaries
-12. **API & dashboard** (`step12_fastapi.py`, `frontend/`) — serves the API and React dashboard
-13. **Regression validation** (`step14_regression_validation.py`) — validates the CMS formula benchmark against actual allowed amounts
-
----
-
 ## Run Locally
 
 **Prerequisites:** Python 3.11 or 3.12, Node.js LTS (includes `npm`)
