@@ -26,7 +26,7 @@ No PHI or patient-level records are used — the pipeline runs entirely on publi
 
 ---
 
-## Application Screenshots
+## Application Dashbaord
 
 <div align="center">
 
