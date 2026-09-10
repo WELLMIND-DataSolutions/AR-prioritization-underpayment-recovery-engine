@@ -14,6 +14,9 @@ No PHI or patient-level records are used — the pipeline runs entirely on publi
 
 ---
 
+## Live Demo
+https://ar-prioritization-underpayment-reco.vercel.app/
+---
 ## Key Features
 
 - **Expected payment estimation** — builds expected-payment tables from CMS RVU reference data and joins them against actual CMS payment
