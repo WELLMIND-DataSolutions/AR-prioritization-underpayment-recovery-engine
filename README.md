@@ -41,15 +41,7 @@ https://ar-prioritization-underpayment-reco.vercel.app/
 
 ---
 
-## Benefit
 
-- **Recovery effort is prioritized, not scattered** — Critical/High/Medium/Standard tiers point AR teams at the claims worth chasing first instead of reviewing underpayments in submission order
-- **Findings are audit-defensible** — expected payment is anchored to the CMS fee schedule formula, so flagged underpayments can be justified to payers and stakeholders, not just to a model
-- **Recovery opportunity is actionable by segment** — breakdowns by state, HCPCS code, and provider type let teams target the largest sources of lost revenue instead of working claims one at a time
-- **Anomalies aren't missed** — the Isolation Forest layer catches unusual underpayment patterns that a standard variance threshold alone would overlook
-- **Instant answers on individual claims** — the live claim checker gives a recovery-priority score and recommended action on demand, without waiting for a batch run
-
----
 
 ## Application Dashbaord
 
@@ -77,10 +69,12 @@ https://ar-prioritization-underpayment-reco.vercel.app/
 </div>
 
 ---
+## Benefit
 
-
-
-
-
+- **Recovery effort is prioritized, not scattered** — Critical/High/Medium/Standard tiers point AR teams at the claims worth chasing first instead of reviewing underpayments in submission order
+- **Findings are audit-defensible** — expected payment is anchored to the CMS fee schedule formula, so flagged underpayments can be justified to payers and stakeholders, not just to a model
+- **Recovery opportunity is actionable by segment** — breakdowns by state, HCPCS code, and provider type let teams target the largest sources of lost revenue instead of working claims one at a time
+- **Anomalies aren't missed** — the Isolation Forest layer catches unusual underpayment patterns that a standard variance threshold alone would overlook
+- **Instant answers on individual claims** — the live claim checker gives a recovery-priority score and recommended action on demand, without waiting for a batch run
 
 ---
