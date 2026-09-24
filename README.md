@@ -4,6 +4,11 @@
 
 </div>
 
+<p align="center">
+  <a href="https://ar-prioritization-underpayment-reco.vercel.app/">
+    <strong>Live Demo</strong>
+  </a>
+</p>
 ---
 
 
@@ -14,11 +19,7 @@ Revenue Cycle teams need a practical way to identify claims that are likely unde
 
 No PHI or patient-level records are used — the pipeline runs entirely on public CMS Medicare and Physician Fee Schedule/RVU data.
 
-<p align="center">
-  <a href="https://ar-prioritization-underpayment-reco.vercel.app/">
-    <strong>Live Demo</strong>
-  </a>
-</p>
+
 
 ---
 
