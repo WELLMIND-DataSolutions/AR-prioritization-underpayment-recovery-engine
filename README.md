@@ -4,7 +4,6 @@
 
 </div>
 
----
 
 <p align="center">
   <a href="https://ar-prioritization-underpayment-reco.vercel.app/">
