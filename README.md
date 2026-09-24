@@ -16,7 +16,19 @@ No PHI or patient-level records are used — the pipeline runs entirely on publi
 
 ## Live Demo
 https://ar-prioritization-underpayment-reco.vercel.app/
+
 ---
+
+## Aim
+
+- Estimate what a claim's payment should have been using CMS RVU reference data as an audit-defensible benchmark
+- Flag claims that appear materially underpaid relative to that expected payment
+- Rank underpaid claims so AR teams know which ones to review first
+- Surface which states, HCPCS codes, and provider types drive the largest recovery opportunity
+- Give AR teams an instant, claim-level recovery-priority score they can act on directly
+
+---
+
 ## Key Features
 
 - **Expected payment estimation** — builds expected-payment tables from CMS RVU reference data and joins them against actual CMS payment
@@ -26,6 +38,16 @@ https://ar-prioritization-underpayment-reco.vercel.app/
 - **Regression validation** — a supplementary ML regressor cross-checks the CMS formula benchmark against actual allowed amounts
 - **Live claim checker** — enter a claim's details and get an instant recovery-priority score with recommended action
 - **FastAPI + React dashboard** — a live API backend with an interactive dashboard for the priority queue, underpayment reports, and claim checking
+
+---
+
+## Benefit
+
+- **Recovery effort is prioritized, not scattered** — Critical/High/Medium/Standard tiers point AR teams at the claims worth chasing first instead of reviewing underpayments in submission order
+- **Findings are audit-defensible** — expected payment is anchored to the CMS fee schedule formula, so flagged underpayments can be justified to payers and stakeholders, not just to a model
+- **Recovery opportunity is actionable by segment** — breakdowns by state, HCPCS code, and provider type let teams target the largest sources of lost revenue instead of working claims one at a time
+- **Anomalies aren't missed** — the Isolation Forest layer catches unusual underpayment patterns that a standard variance threshold alone would overlook
+- **Instant answers on individual claims** — the live claim checker gives a recovery-priority score and recommended action on demand, without waiting for a batch run
 
 ---
 
@@ -56,46 +78,9 @@ https://ar-prioritization-underpayment-reco.vercel.app/
 
 ---
 
-## Model Results
 
-Best model: **LightGBM**
 
-| Model | Mean PR-AUC | Mean ROC-AUC | Mean F1 |
-|---|---:|---:|---:|
-| LightGBM | 0.8688 | 0.8791 | 0.7479 |
-| Hist Gradient Boosting | 0.8663 | 0.8771 | 0.7622 |
-| Random Forest | 0.8561 | 0.8653 | 0.7449 |
-| Gradient Boosting | 0.8546 | 0.8639 | 0.7284 |
-| Logistic Regression | 0.6921 | 0.7078 | 0.6060 |
 
-**Final holdout metrics:** Test PR-AUC 0.8754 · Test ROC-AUC 0.8857 · Test F1 0.7577, trained on 6,142,472 rows across 23 features.
 
-**Regression validation** (supplementary cross-check against actual CMS allowed amounts):
-
-| Model | MAE | RMSE | R² |
-|---|---:|---:|---:|
-| HistGradientBoosting Regressor | 14.48 | 53.20 | 0.9268 |
-| CMS Formula Benchmark | 28.07 | 99.38 | 0.7446 |
-| Linear Regression | 29.34 | 109.83 | 0.6881 |
-
-The CMS fee schedule formula remains the primary expected-payment benchmark because it's audit-defensible; the ML regressor is a supplementary validation layer, not the pricing engine.
 
 ---
-
-## Recovery Opportunity Summary
-
-| Metric | Value |
-|---|---:|
-| Underpaid queue rows | 6,056,133 |
-| Estimated recovery | $14,993,979,972.64 |
-| Critical tier rows | 9,114 |
-| High tier rows | 173,218 |
-| Top state by recovery | CA |
-| Top HCPCS by recovery | 66984 |
-| Top provider type | Diagnostic Radiology |
-
-Some surgical-code rows are flagged for modifier review, since the public CMS PUF doesn't expose global surgery, bilateral, assistant-surgeon, or MPPR modifiers — client-facing totals should account for this.
-
----
-
-
