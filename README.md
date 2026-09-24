@@ -14,9 +14,11 @@ No PHI or patient-level records are used — the pipeline runs entirely on publi
 
 ---
 
-## Live Demo
-https://ar-prioritization-underpayment-reco.vercel.app/
-
+<p align="center">
+  <a href="https://ar-prioritization-underpayment-reco.vercel.app/">
+    <strong>Live Demo</strong>
+  </a>
+</p>
 ---
 
 ## Aim
